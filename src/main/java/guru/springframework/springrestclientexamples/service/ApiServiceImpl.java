@@ -3,7 +3,7 @@ package guru.springframework.springrestclientexamples.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import guru.springframework.api.domain.User;
 import guru.springframework.api.domain.UserData;
@@ -11,20 +11,20 @@ import guru.springframework.api.domain.UserData;
 @Service
 public class ApiServiceImpl implements ApiService {
 
-    private RestTemplate restTemplate;
+    private WebClient webClient;
 
-    public ApiServiceImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public ApiServiceImpl(WebClient webClient) {
+        this.webClient = webClient;
     }
 
     @Override
     public List<User> findAllUsers(Integer limit) {
-        var userData = restTemplate.getForObject(
-            "http://private-anon-0f354b021d-apifaketory.apiary-mock.com/api/user?limit=" + limit,
-            UserData.class
-        );
+        var userData = webClient.get()
+                                .uri("/api/user?limit=" + limit)
+                                .retrieve()
+                                .bodyToMono(UserData.class);
 
-        return userData.getData();
+        return userData.map(UserData::getData).block();
     }
 
 }

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SpringRestClientExamplesApplication<spring-rest-client-examples>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "guru.springframework.springrestclientexamples.SpringRestClientExamplesApplication",
+      "projectName": "spring-rest-client-examples",
+      "args": ""
+    }
+  ]
+}
