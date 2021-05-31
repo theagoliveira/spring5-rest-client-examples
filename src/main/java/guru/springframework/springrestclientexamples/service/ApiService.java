@@ -1,11 +1,11 @@
 package guru.springframework.springrestclientexamples.service;
 
-import java.util.List;
-
 import guru.springframework.api.domain.User;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface ApiService {
 
-    List<User> findAllUsers(Integer limit);
+    Flux<User> findAllUsers(Mono<Integer> limit);
 
 }

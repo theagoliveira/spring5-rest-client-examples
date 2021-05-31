@@ -2,13 +2,13 @@ package guru.springframework.springrestclientexamples.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import guru.springframework.api.domain.User;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @SpringBootTest
 class ApiServiceImplTest {
@@ -18,9 +18,9 @@ class ApiServiceImplTest {
 
     @Test
     void testFindAllUsers() {
-        List<User> users = apiService.findAllUsers(1);
+        Flux<User> users = apiService.findAllUsers(Mono.just(1));
 
-        assertEquals(1, users.size());
+        assertEquals(1, users.count().block());
     }
 
 }
