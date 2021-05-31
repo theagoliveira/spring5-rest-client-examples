@@ -15,6 +15,6 @@ public class Login implements Serializable {
     String password;
     String md5;
     String sha1;
-    String sha26;
+    String sha256;
 
 }
