@@ -2,3 +2,6 @@ api:
   host: jsonplaceholder.typicode.com
   uri: /users
 
+logging:
+  level:
+    '[guru.springframework]': debug
