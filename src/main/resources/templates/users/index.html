@@ -28,38 +28,34 @@
                      class="table table-hover table-sm table-borderless table-striped">
                 <thead class="table-light">
                   <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Gender</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Language</th>
                     <th scope="col">Phone</th>
+                    <th scope="col">Website</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr th:remove="all">
-                    <td>Jill</td>
-                    <td>Sparrow</td>
-                    <td>Female</td>
+                    <td>Jill Sparrow</td>
+                    <td>jillsparrow</td>
                     <td>jillsparrow@example.com</td>
-                    <td>pt</td>
                     <td>99876-5432</td>
+                    <td>jillsparrow.com</td>
                   </tr>
                   <tr th:remove="all">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>Male</td>
+                    <td>John Doe</td>
+                    <td>johndoe</td>
                     <td>johndoe@example.com</td>
-                    <td>en</td>
                     <td>555-666-777</td>
+                    <td>johndoe.com</td>
                   </tr>
                   <tr th:each="user : ${users}">
-                    <td th:text="${user.name.first}">First Name</td>
-                    <td th:text="${user.name.last}">Last Name</td>
-                    <td th:text="${user.gender}">Gender</td>
+                    <td th:text="${user.name}">First Name</td>
+                    <td th:text="${user.username}">Username</td>
                     <td th:text="${user.email}">Email</td>
-                    <td th:text="${user.language}">Language</td>
                     <td th:text="${user.phone}">Phone</td>
+                    <td th:text="${user.website}">Website</td>
                   </tr>
                 </tbody>
               </table>

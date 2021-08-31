@@ -1,0 +1,4 @@
+api:
+  host: jsonplaceholder.typicode.com
+  uri: /users
+

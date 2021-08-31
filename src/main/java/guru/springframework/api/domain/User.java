@@ -11,15 +11,13 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 952278064L;
 
-    String gender;
-    Name name;
-    Location location;
+    Long id;
+    String name;
+    String username;
     String email;
-    Login login;
+    Address address;
     String phone;
-    Job job;
-    Billing billing;
-    String language;
-    String currency;
+    String website;
+    Company company;
 
 }

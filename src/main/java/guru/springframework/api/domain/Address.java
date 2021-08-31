@@ -7,13 +7,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Location implements Serializable {
+public class Address implements Serializable {
 
     private static final long serialVersionUID = 100328337L;
 
     String street;
+    String suite;
     String city;
-    String state;
-    String postcode;
+    String zipcode;
+    Geo geo;
 
 }

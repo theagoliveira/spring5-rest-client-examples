@@ -7,10 +7,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Billing implements Serializable {
+public class Geo implements Serializable {
 
-    private static final long serialVersionUID = 764660578L;
+    private static final long serialVersionUID = 101226737L;
 
-    Card card;
+    String lat;
+    String lng;
 
 }

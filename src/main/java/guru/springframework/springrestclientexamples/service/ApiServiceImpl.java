@@ -24,14 +24,13 @@ public class ApiServiceImpl implements ApiService {
     @Override
     public Flux<User> findAllUsers(Mono<Integer> limit) {
         var uriComponentsBuilder = UriComponentsBuilder.fromUriString(uri)
-                                                       .queryParam("limit", limit.block());
+                                                       .queryParam("_limit", limit.block());
 
         return webClient.get()
                         .uri(uriComponentsBuilder.toUriString())
                         .retrieve()
-                        .bodyToMono(UserData.class)
-                        .flatMapIterable(UserData::getData);
-
+                        .bodyToMono(User[].class)
+                        .flatMapMany(Flux::fromArray);
     }
 
 }
