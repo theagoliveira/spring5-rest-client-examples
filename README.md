@@ -37,4 +37,4 @@ Project from the online course [**Spring Framework 5: Beginner to Guru**](https:
 
 ## Deployment
 
-App deployed on [Heroku]()
+App deployed on [Heroku](https://tranquil-brushlands-70421.herokuapp.com/)
